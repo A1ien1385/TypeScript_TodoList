@@ -1,6 +1,6 @@
-let age;
-// inferencja jeżeli do age nie przypisujemy wartości to musimy przynajmniej zadeklarować typ zmiennej
-age = 29;
-const add = (v1, v2) => v1 + v2;
-const sum = add(2, 2);
-console.log(sum);
+//union type czyli zmienna może przyjąć albo string, albo number
+const logAge = (age) => {
+    console.log(`hej mam ${age} lat`);
+};
+logAge(24);
+logAge("dwadzieścia osiem");
