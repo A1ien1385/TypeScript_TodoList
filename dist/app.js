@@ -1,7 +1,13 @@
-//union type czyli zmienna może przyjąć albo string, albo number, albo boolean
-const logAge = (age) => {
-    console.log(`hej mam ${age} lat`);
+const button = document.querySelector("button");
+
+const calc = (originalPrice, hasDiscount) => {
+  return hasDiscount ? originalPrice * 0.8 : originalPrice;
 };
-logAge(24);
-logAge("dwadzieścia osiem");
-logAge(true);
+
+button.addEventListener("click", () => {
+  const originalPrice = 50;
+  const hasDiscount = new URLSearchParams(window.location.search).get(
+    "discount"
+  );
+  console.log(calc(originalPrice, hasDiscount));
+});
