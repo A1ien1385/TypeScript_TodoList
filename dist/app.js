@@ -1,8 +1,6 @@
-const input1 = document.querySelector("#input1");
-const input2 = document.querySelector("#input2");
-const addBtn = document.querySelector("button");
+let age;
+// inferencja jeżeli do age nie przypisujemy wartości to musimy przynajmniej zadeklarować typ zmiennej
+age = 29;
 const add = (v1, v2) => v1 + v2;
-addBtn.addEventListener("click", () => {
-    const sum = add(Number(input1.value), Number(input2.value));
-    console.log(sum);
-});
+const sum = add(2, 2);
+console.log(sum);
