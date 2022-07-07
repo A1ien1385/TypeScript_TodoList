@@ -5,7 +5,7 @@
 const taskNameInput = document.querySelector("#name");
 const btn = document.querySelector(".addTask");
 const tasksContainerElement = document.querySelector(".tasks");
-let tasks = [
+const tasks = [
   "Dać psu lekarstwa",
   "Wziąć Asamax",
   "Zrobić lekcję Duolingo",
