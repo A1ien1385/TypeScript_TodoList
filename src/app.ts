@@ -7,39 +7,28 @@ const taskNameInput: HTMLInputElement = document.querySelector("#name");
 const btn: HTMLButtonElement = document.querySelector("button");
 const tasksContainerElement: HTMLElement = document.querySelector(".tasks");
 
-const task = {
-  name: "Dać psu lekarstwa",
-  done: false,
-};
-
-const tasks: string[] = [
-  "Dać psu lekarstwa",
-  "Wziąć Asamax",
-  "Zrobić lekcję Duolingo",
-  "Zjeść śniadanie",
-  "Wypić yerbe/kawę",
-  "Pouczyć się programowania",
-  "Porysować",
-  "Pojechać po Karolinę",
-  "Zagrać partyjkę w Elden Ring, albo poczytać Endymiona",
+const tasks: { name: string; done: boolean }[] = [
+  { name: "Daj psu lekarstwo", done: false },
+  { name: "Weź Asamax", done: true },
+  { name: "Zrób Duolingo", done: false },
 ];
 
 const render = () => {
   tasksContainerElement.innerHTML = "";
   tasks.forEach((task) => {
     const taskElement: HTMLElement = document.createElement("li");
-    taskElement.innerText = task;
+    taskElement.innerText = task.name;
     tasksContainerElement.appendChild(taskElement);
   });
 };
 
-const addTask = (task: string) => {
-  tasks.push(task);
+const addTask = (taskName: string) => {
+  tasks.push({ name: taskName, done: false });
 };
 
 btn.addEventListener("click", (Event) => {
   event.preventDefault();
-  tasks.push(taskNameInput.value);
+  addTask(taskNameInput.value);
   taskNameInput.value = "";
   render();
 });
