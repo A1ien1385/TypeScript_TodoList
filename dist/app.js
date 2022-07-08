@@ -3,40 +3,38 @@
 //   <input type="checkbox" name="Dać psu lekarstwa" id="task-1" />
 // </li>;
 const taskNameInput = document.querySelector("#name");
-const btn = document.querySelector(".addTask");
+const btn = document.querySelector("button");
 const tasksContainerElement = document.querySelector(".tasks");
+const task = {
+    name: "Dać psu lekarstwa",
+    done: false,
+};
 const tasks = [
-  "Dać psu lekarstwa",
-  "Wziąć Asamax",
-  "Zrobić lekcję Duolingo",
-  "Zjeść śniadanie",
-  "Wypić yerbe/kawę",
-  "Pouczyć się programowania",
-  "Porysować",
-  "Pojechać po Karolinę",
-  "Zagrać partyjkę w Elden Ring, albo poczytać Endymiona",
+    "Dać psu lekarstwa",
+    "Wziąć Asamax",
+    "Zrobić lekcję Duolingo",
+    "Zjeść śniadanie",
+    "Wypić yerbe/kawę",
+    "Pouczyć się programowania",
+    "Porysować",
+    "Pojechać po Karolinę",
+    "Zagrać partyjkę w Elden Ring, albo poczytać Endymiona",
 ];
 const render = () => {
-  tasksContainerElement.innerHTML = "";
-  tasks.forEach((task) => {
-    const taskElement = document.createElement("li");
-    taskElement.innerText = task;
-    tasksContainerElement.appendChild(taskElement);
-  });
+    tasksContainerElement.innerHTML = "";
+    tasks.forEach((task) => {
+        const taskElement = document.createElement("li");
+        taskElement.innerText = task;
+        tasksContainerElement.appendChild(taskElement);
+    });
 };
 const addTask = (task) => {
-  tasks.push(task);
+    tasks.push(task);
 };
 btn.addEventListener("click", (Event) => {
-  event.preventDefault();
-  tasks.push(taskNameInput.value);
-  taskNameInput.value = "";
-  render();
+    event.preventDefault();
+    tasks.push(taskNameInput.value);
+    taskNameInput.value = "";
+    render();
 });
 render();
-
-//refresh list
-const refreshList = document.querySelector(".refreshList");
-refreshList.addEventListener("click", (e) => {
-  window.location.reload();
-});

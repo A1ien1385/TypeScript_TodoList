@@ -7,6 +7,11 @@ const taskNameInput: HTMLInputElement = document.querySelector("#name");
 const btn: HTMLButtonElement = document.querySelector("button");
 const tasksContainerElement: HTMLElement = document.querySelector(".tasks");
 
+const task = {
+  name: "Dać psu lekarstwa",
+  done: false,
+};
+
 const tasks: string[] = [
   "Dać psu lekarstwa",
   "Wziąć Asamax",
