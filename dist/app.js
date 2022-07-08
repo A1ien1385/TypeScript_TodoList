@@ -9,12 +9,27 @@ const tasks = [
     { name: "Daj psu lekarstwo", done: false },
     { name: "Weź Asamax", done: true },
     { name: "Zrób Duolingo", done: false },
+    { name: "Zjedz śniadanie", done: true },
+    { name: "Wypij yerbe/kawe", done: false },
 ];
 const render = () => {
     tasksContainerElement.innerHTML = "";
-    tasks.forEach((task) => {
+    tasks.forEach((task, index) => {
         const taskElement = document.createElement("li");
-        taskElement.innerText = task.name;
+        const id = `task-${index}`;
+        const labelElement = document.createElement("label");
+        labelElement.innerText = task.name;
+        labelElement.setAttribute("for", id);
+        const checkboxElement = document.createElement("input");
+        checkboxElement.type = "checkbox";
+        checkboxElement.name = task.name;
+        checkboxElement.id = id;
+        checkboxElement.checked = task.done;
+        checkboxElement.addEventListener("change", () => {
+            task.done = !task.done;
+        });
+        taskElement.appendChild(labelElement);
+        taskElement.appendChild(checkboxElement);
         tasksContainerElement.appendChild(taskElement);
     });
 };
