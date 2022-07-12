@@ -64,4 +64,5 @@ btn.addEventListener("click", (event: Event) => {
   render();
 });
 
+// addTask({name: "test", category: "general", done: false});
 render();
