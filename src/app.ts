@@ -3,7 +3,7 @@
 //   <input type="checkbox" name="Dać psu lekarstwa" id="task-1" />
 // </li>;
 
-const taskNameInput: HTMLInputElement = document.querySelector("#name");
+const taskNameInputElement: HTMLInputElement = document.querySelector("#name");
 const btn: HTMLButtonElement = document.querySelector("button");
 const tasksContainerElement: HTMLElement = document.querySelector(".tasks");
 
@@ -40,14 +40,14 @@ const render = () => {
   });
 };
 
-const addTask = (taskName: string) => {
-  tasks.push({ name: taskName, done: false });
+const addTask = (task: { name: string; done: boolean }) => {
+  tasks.push(task);
 };
 
-btn.addEventListener("click", (Event) => {
+btn.addEventListener("click", (event: Event) => {
   event.preventDefault();
-  addTask(taskNameInput.value);
-  taskNameInput.value = "";
+  addTask({ name: taskNameInputElement.value, done: false });
+  taskNameInputElement.value = "";
   render();
 });
 
