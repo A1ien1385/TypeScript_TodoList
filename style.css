@@ -169,3 +169,15 @@ label {
     left: 70%;
   }
 }
+
+.general {
+  color: darkslategrey;
+}
+
+.hobby {
+  color: yellowgreen;
+}
+
+.work {
+  color: rebeccapurple;
+}
