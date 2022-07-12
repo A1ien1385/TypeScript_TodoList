@@ -12,7 +12,40 @@
   <body>
     <form class="container">
       <label for="name">Task:</label>
+
       <input type="text" id="name" />
+
+      <ul class="categories">
+        <li>
+          <input
+            type="radio"
+            name="category"
+            value="general"
+            id="category-general"
+          />
+          <label for="category-general">General</label>
+
+          <input
+            type="radio"
+            name="category"
+            value="hobby"
+            id="category-hobby"
+          />
+          <label for="category-hobby">Hobby</label>
+
+          <input type="radio" name="category" value="work" id="category-work" />
+          <label for="category-work">Work</label>
+
+          <input
+            type="radio"
+            name="category"
+            value="other"
+            id="category-other"
+          />
+          <label for="category-other">Other</label>
+        </li>
+      </ul>
+
       <button class="addTask">Add new task</button>
       <button class="refreshList">Refresh list</button>
       <p>TODO:</p>

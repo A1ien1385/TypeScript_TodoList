@@ -20,7 +20,7 @@ const tasks: Task[] = [
   { name: "Weź Asamax", done: true, category: "general" },
   { name: "Zrób Duolingo", done: false, category: "hobby" },
   { name: "Zjedz śniadanie", done: true, category: "general" },
-  { name: "Wypij yerbe/kawe", done: false },
+  { name: "Wypij yerbe/kawe", done: false, category: "general" },
   { name: "Dokończ zaczęte projekty", done: false, category: "work"},
 ];
 
