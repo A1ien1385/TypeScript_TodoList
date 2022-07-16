@@ -7,6 +7,8 @@ const taskNameInputElement: HTMLInputElement = document.querySelector("#name");
 const btn: HTMLButtonElement = document.querySelector("button");
 const tasksContainerElement: HTMLElement = document.querySelector(".tasks");
 
+//interface
+
 interface Task {
   name: string;
   done: boolean;
