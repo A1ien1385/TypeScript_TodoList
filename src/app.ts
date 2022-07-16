@@ -19,9 +19,9 @@ const categories: string[] = ["general", "work", "hobby"];
 
 const tasks: Task[] = [
   { name: "Daj psu lekarstwo", done: false, category: "general"; },
-  { name: "Weź Asamax", done: true, category: "general" },
+  { name: "Weź Asamax", done: false, category: "general" },
   { name: "Zrób Duolingo", done: false, category: "hobby" },
-  { name: "Zjedz śniadanie", done: true, category: "general" },
+  { name: "Zjedz śniadanie", done: false, category: "general" },
   { name: "Wypij yerbe/kawe", done: false, category: "general" },
   { name: "Dokończ zaczęte projekty", done: false, category: "work"},
 ];
