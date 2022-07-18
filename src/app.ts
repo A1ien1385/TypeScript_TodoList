@@ -19,7 +19,7 @@ interface Task {
 
 
 
-const categories: string[] = ["general", "work", "hobby"];
+const categories: Category[] = ["general", "work", "hobby"];
 
 const tasks: Task[] = [
   { name: "Daj psu lekarstwo", done: false, category: "general"; },
