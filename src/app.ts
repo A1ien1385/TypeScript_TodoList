@@ -1,13 +1,7 @@
-// <li>
-//   <label for="task-1">Dać psu lekarstwa</label>
-//   <input type="checkbox" name="Dać psu lekarstwa" id="task-1" />
-// </li>;
-
 const taskNameInputElement: HTMLInputElement = document.querySelector("#name");
 const btn: HTMLButtonElement = document.querySelector("button");
 const tasksContainerElement: HTMLElement = document.querySelector(".tasks");
 
-//interface
 
 type Category = "general" | "work" | "hobby" | "other";
 
