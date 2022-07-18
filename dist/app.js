@@ -1,3 +1,4 @@
+import { render } from "./helpers/render-tasks.helper.js";
 const taskNameInputElement = document.querySelector("#name");
 const btn = document.querySelector("button");
 const tasksContainerElement = document.querySelector(".tasks");
@@ -10,30 +11,6 @@ const tasks = [
     { name: "Wypij yerbe/kawe", done: false, category: "general" },
     { name: "Dokończ zaczęte projekty", done: false, category: "work" },
 ];
-const render = () => {
-    tasksContainerElement.innerHTML = "";
-    tasks.forEach((task, index) => {
-        const taskElement = document.createElement("li");
-        if (task.category) {
-            taskElement.classList.add(task.category);
-        }
-        const id = `task-${index}`;
-        const labelElement = document.createElement("label");
-        labelElement.innerText = task.name;
-        labelElement.setAttribute("for", id);
-        const checkboxElement = document.createElement("input");
-        checkboxElement.type = "checkbox";
-        checkboxElement.title = task.name;
-        checkboxElement.id = id;
-        checkboxElement.checked = task.done;
-        checkboxElement.addEventListener("change", () => {
-            task.done = !task.done;
-        });
-        taskElement.appendChild(labelElement);
-        taskElement.appendChild(checkboxElement);
-        tasksContainerElement.appendChild(taskElement);
-    });
-};
 const addTask = (task) => {
     tasks.push(task);
 };
@@ -44,8 +21,8 @@ btn.addEventListener("click", (event) => {
     if (taskNameInputElement.value != "") {
         addTask({ name: taskNameInputElement.value, done: false, category: selectedCategory });
         taskNameInputElement.value = "";
-        render();
+        render(tasks, tasksContainerElement);
     }
 });
 // addTask({name: "test", category: "general", done: false});
-render();
+render(tasks, tasksContainerElement);
