@@ -42,9 +42,9 @@ const addTask = (task) => {
     tasks.push(task);
 };
 btn.addEventListener("click", (event) => {
+    event.preventDefault();
     const selectedRadioElement = document.querySelector("input[type=radio]:checked");
     const selectedCategory = selectedRadioElement.value;
-    event.preventDefault();
     if (taskNameInputElement.value != "") {
         addTask({ name: taskNameInputElement.value, done: false, category: selectedCategory });
         taskNameInputElement.value = "";
