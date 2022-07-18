@@ -24,5 +24,4 @@ btn.addEventListener("click", (event) => {
         render(tasks, tasksContainerElement);
     }
 });
-// addTask({name: "test", category: "general", done: false});
 render(tasks, tasksContainerElement);

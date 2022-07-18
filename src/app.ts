@@ -37,5 +37,5 @@ btn.addEventListener("click", (event: Event) => {
   }
 });
 
-// addTask({name: "test", category: "general", done: false});
+
 render(tasks, tasksContainerElement);
