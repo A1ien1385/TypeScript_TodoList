@@ -185,3 +185,8 @@ label {
 .other {
   color: tomato;
 }
+
+form
+{
+  z-index: 1000;
+}
